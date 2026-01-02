@@ -7,8 +7,8 @@ services:
     networks:
       - dns_net
     ports:
-      - "53:53/udp"
-      - "53:53/tcp"
+      - "5353:53/udp"
+      - "5353:53/tcp"
     volumes:
       - ./corefile:/etc/coredns/Corefile:ro
     deploy:
