@@ -1,5 +1,4 @@
-volumes:
-  - ./corefile:/etc/coredns/Corefile:roversion: "3.8"
+version: "3.8"
 
 services:
   coredns:
@@ -15,10 +14,8 @@ services:
     deploy:
       mode: replicated
       replicas: 2
-      placement:
-        constraints:
-          - node.role == worker
 
 networks:
   dns_net:
     driver: overlay
+
