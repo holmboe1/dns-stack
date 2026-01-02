@@ -9,8 +9,6 @@ services:
     ports:
       - "5353:53/udp"
       - "5353:53/tcp"
-    volumes:
-      - ./corefile:/etc/coredns/Corefile:ro
     deploy:
       mode: replicated
       replicas: 2
