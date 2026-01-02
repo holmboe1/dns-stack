@@ -9,6 +9,9 @@ services:
     ports:
       - "5353:53/udp"
       - "5353:53/tcp"
+    configs:
+      - source: coredns_corefile
+        target: /etc/coredns/Corefile
     deploy:
       mode: replicated
       replicas: 2
@@ -16,4 +19,8 @@ services:
 networks:
   dns_net:
     driver: overlay
+
+configs:
+  coredns_corefile:
+    file: ./corefile
 
