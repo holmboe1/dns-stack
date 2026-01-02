@@ -1,4 +1,5 @@
-version: "3.8"
+volumes:
+  - ./corefile:/etc/coredns/Corefile:roversion: "3.8"
 
 services:
   coredns:
