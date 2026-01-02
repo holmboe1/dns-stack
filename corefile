@@ -1,0 +1,18 @@
+.:53 {
+    log
+    errors
+    health
+    forward . 1.1.1.1 8.8.8.8
+}
+
+homelab.local:53 {
+    log
+    errors
+    hosts {
+        192.168.10.253 grafana.homelab.local prometheus.homelab.local portainer.homelab.local
+        192.168.10.252 docker01.homelab.local
+        192.168.10.253 docker02.homelab.local
+        192.168.10.254 docker03.homelab.local
+        fallthrough
+    }
+}
